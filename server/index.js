@@ -1,15 +1,15 @@
 import express from "express";
+import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import userRoutes from "./routes/users.js"
+import userRoutes from "./routes/users.js";
 
 const app = express();
 
-app.use('/users', userRoutes)
-
-app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
+app.use("/users", userRoutes);
 
 const DB_CONNECTION =
   "mongodb+srv://test_database:2qG2dAgfjfHowpcN@rest.bpir1.mongodb.net/Rest?retryWrites=true&w=majority";
