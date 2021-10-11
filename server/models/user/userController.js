@@ -3,7 +3,6 @@ import UserInfo from "./userSchema.js";
 const getUsers = async (req, res) => {
   try {
     const userInfo = await UserInfo.find();
-    console.log(userInfo);
     res.status(200).json(userInfo);
   } catch (err) {
     res.status(404).json({ message: err.message });
@@ -11,8 +10,11 @@ const getUsers = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const user = req.body;
-  const newUser = new UserInfo(user);
+  const newUser = new UserInfo({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+  });
 
   try {
     await newUser.save();
