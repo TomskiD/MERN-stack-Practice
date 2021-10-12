@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import {getUsers} from './actions/users'
 import Form from "./components/Form/Form";
@@ -14,9 +14,9 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Container maxWidth="xs">
+    <Grid container justifyContent="center" alignItems="center" direction="column" style={{ minHeight: "100vh" }} spacing={2}>
       <Form></Form>
-    </Container>
+    </Grid>
   );
 };
 
