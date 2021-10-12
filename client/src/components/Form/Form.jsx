@@ -1,12 +1,11 @@
-import * as React from "react";
-import { useState } from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
-import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+import * as React from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
-import { useFormControls } from "./useFormControl";
-import { inputFieldValues } from "./formFieldsValue";
-import useStyles from "./styles";
+import { useFormControls } from './useFormControl';
+import { inputFieldValues } from './formFieldsValue';
+import useStyles from './styles';
 
 const Form = () => {
   const { handleInputValue, handleFormSubmit, formIsValid, errors } = useFormControls();
@@ -19,24 +18,20 @@ const Form = () => {
           <Typography variant="h4" align="center">
             Create User
           </Typography>
-          {inputFieldValues.map((inputFieldValue, index) => {
-            return (
-              <TextField
-                className={classes.fileInput}
-                key={index}
-                onBlur={handleInputValue}
-                onChange={handleInputValue}
-                name={inputFieldValue.name}
-                label={inputFieldValue.label}
-                autoComplete="none"
-                {...(errors[inputFieldValue.name] && {
-                  error: true,
-                  helperText: errors[inputFieldValue.name],
-                })}
-                fullWidth
-              />
-            );
-          })}
+          {inputFieldValues.map((inputFieldValue, index) => (
+            <TextField
+              className={classes.fileInput}
+              key={index}
+              onBlur={handleInputValue}
+              onChange={handleInputValue}
+              name={inputFieldValue.name}
+              label={inputFieldValue.label}
+              autoComplete="none"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...(errors[inputFieldValue.name] && { error: true, helperText: errors[inputFieldValue.name] })}
+              fullWidth
+            />
+          ))}
           <DatePicker
             label="Date"
             name="date"
