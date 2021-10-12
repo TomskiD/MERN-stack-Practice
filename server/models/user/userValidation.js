@@ -1,5 +1,4 @@
 export default (email) => {
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   return emailRegex.test(email);
 };
-
