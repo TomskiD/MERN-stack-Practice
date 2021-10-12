@@ -20,7 +20,7 @@ export const initialFormValues = {
   firstName: "",
   lastName: "",
   email: "",
-  date: "",
+  date: Date.now(),
   formSubmitted: false,
   success: false,
 }
