@@ -13,10 +13,11 @@ const Form = () => {
   return (
     <Paper className={classes.paper}>
       <form onSubmit={handleFormSubmit}>
-        <Typography variant="h4">Create User</Typography>
+        <Typography variant="h4" align="center">Create User</Typography>
         {inputFieldValues.map((inputFieldValue, index) => {
           return (
             <TextField
+              className={classes.fileInput}
               key={index}
               onBlur={handleInputValue}
               onChange={handleInputValue}
@@ -31,6 +32,7 @@ const Form = () => {
             />
           );
         })}
+
         <Button
           className={classes.buttonSubmit}
           disabled={!formIsValid()}
