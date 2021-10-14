@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -41,6 +40,12 @@ export const useFormControls = () => {
     });
     validate({ [name]: value });
   };
+  const handleDateInputValue = (e) => {
+    setValues({
+      ...values,
+      "date": e
+    });
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -62,6 +67,7 @@ export const useFormControls = () => {
 
   return {
     handleInputValue,
+    handleDateInputValue,
     handleFormSubmit,
     formIsValid,
     errors

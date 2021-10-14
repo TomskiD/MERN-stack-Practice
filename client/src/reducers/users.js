@@ -1,7 +1,8 @@
-import { CREATE, FETCH_ALL } from '../constants/actionTypes';
+import {CREATE, FETCH_ALL} from "../constants/actionTypes";
+
 
 export default (users = [], action) => {
-  switch (action.type) {
+  switch(action.type) {
     case FETCH_ALL:
       return action.payload;
     case CREATE:
