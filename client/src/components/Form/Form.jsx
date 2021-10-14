@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
@@ -9,7 +8,7 @@ import { inputFieldValues } from "./formFieldsValue";
 import useStyles from "./styles";
 
 const Form = () => {
-  const { handleInputValue, handleFormSubmit, formIsValid, errors } = useFormControls();
+  const { handleInputValue, handleDateInputValue, handleFormSubmit, formIsValid, errors } = useFormControls();
   const classes = useStyles();
 
   return (
@@ -41,7 +40,7 @@ const Form = () => {
             label="Date"
             name="date"
             className={classes.fileInput}
-            onChange={handleInputValue}
+            onChange={handleDateInputValue}
             fullWidth
           />
           <Button
