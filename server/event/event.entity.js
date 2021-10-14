@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import validateEmail from "./userValidation.js";
+const mongoose = require("mongoose");
+const validateEmail = require("./utils");
 
-const UserSchema = mongoose.Schema({
+const EventSchema = mongoose.Schema({
   firstName: {
     type: String,
     trim: true,
@@ -15,6 +15,7 @@ const UserSchema = mongoose.Schema({
   email: {
     type: String,
     trim: true,
+    unique: true,
     required: [true, "Email adress is required"],
     validate: [validateEmail, "Please fill a valid email address"],
   },
@@ -25,6 +26,4 @@ const UserSchema = mongoose.Schema({
   },
 });
 
-const UserInfo = mongoose.model("User", UserSchema);
-
-export default UserInfo;
+module.exports = mongoose.model("Event", EventSchema);
