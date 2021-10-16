@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Grid } from '@material-ui/core';
 
-import { getUsers } from './actions/users';
+import { getEvents } from './actions/events';
 import Form from './components/Form/Form';
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUsers());
+    dispatch(getEvents());
   }, [dispatch]);
 
   return (

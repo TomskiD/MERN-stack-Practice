@@ -1,18 +1,18 @@
 import * as api from '../api';
 import { CREATE, FETCH_ALL } from '../constants/actionTypes';
 
-export const getUsers = () => async (dispatch) => {
+export const getEvents = () => async (dispatch) => {
   try {
-    const { data } = await api.fetchUsers();
+    const { data } = await api.fetchEvents();
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (err) {
     console.log(err.message);
   }
 };
 
-export const createUser = (user) => async (dispatch) => {
+export const createEvent = (user) => async (dispatch) => {
   try {
-    const { data } = await api.createUser(user);
+    const { data } = await api.createEvent(user);
     dispatch({ type: CREATE, payload: data });
   } catch (err) {
     console.log(err.message);

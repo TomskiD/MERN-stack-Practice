@@ -1,14 +1,14 @@
-import * as React from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
-import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+import * as React from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 import { useFormControls } from './useFormControl';
 import { inputFieldValues } from './formFieldsValue';
 import useStyles from './styles';
 
 const Form = () => {
-  const { handleInputValue, handleDateInputValue, handleFormSubmit, formIsValid, errors } = useFormControls();
+  const { handleInputValue, handleDateInputValue, handleFormSubmit, formIsValid, errors, values } = useFormControls();
   const classes = useStyles();
 
   return (
@@ -16,7 +16,7 @@ const Form = () => {
       <Paper className={classes.paper}>
         <form onSubmit={handleFormSubmit}>
           <Typography variant="h4" align="center">
-            Create User
+            Create Event
           </Typography>
           {inputFieldValues.map((inputFieldValue, index) => (
             <TextField
@@ -36,7 +36,9 @@ const Form = () => {
             label="Date"
             name="date"
             className={classes.fileInput}
+            value={values.date}
             onChange={handleDateInputValue}
+            format="dd-MM-yyyy"
             fullWidth
           />
           <Button

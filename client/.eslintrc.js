@@ -23,6 +23,8 @@ module.exports = {
     'react',
   ],
   rules: {
+    'no-console': 'off',
+    'no-alert': 'off',
     'import/extensions': 0,
     'react/prop-types': 0,
     'linebreak-style': 0,
