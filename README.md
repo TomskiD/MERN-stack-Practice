@@ -12,7 +12,7 @@ Run `npm install` in `/client` and `server` folders to install all the dependenc
 
 To fully run the application, run the form on the client side `/client` `npm run start` and the server `/server` `npm run start`
 
-To run tests use 'npm run test' on `/server` side. 
+To run tests use `npm run test` on `/server` side. 
 
 
 ## Usage
