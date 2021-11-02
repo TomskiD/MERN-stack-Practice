@@ -13,12 +13,12 @@ const getEvent = async (req, res) => {
 };
 
 const createEvent = async (req, res) => {
-  try {
-    const eventCreated = await eventService.create(req.body);
-    res.status(201).json(eventCreated);
-  } catch (err) {
-    res.status(409).json({ message: err.message });
+  const { firstName, lastName, email } = req.body;
+  const eventCreated = await eventService.create(req.body);
+  if (!firstName || !lastName || !email) {
+    return res.sendStatus(400);
   }
+  return res.status(201).json(eventCreated);
 };
 
 module.exports = {
