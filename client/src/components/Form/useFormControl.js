@@ -53,7 +53,6 @@ export const useFormControls = () => {
     e.preventDefault();
     if (formIsValid()) {
       dispatch(createEvent(values));
-      alert('User has been registered in the database!');
     }
   };
 
