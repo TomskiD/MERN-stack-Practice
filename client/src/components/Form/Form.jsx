@@ -26,6 +26,7 @@ const Form = () => {
               onChange={handleInputValue}
               name={inputFieldValue.name}
               label={inputFieldValue.label}
+              data-testid={inputFieldValue['test-id']}
               autoComplete="none"
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...(errors[inputFieldValue.name] && { error: true, helperText: errors[inputFieldValue.name] })}
@@ -48,6 +49,7 @@ const Form = () => {
             color="primary"
             size="large"
             type="submit"
+            data-testid="event-submit"
             fullWidth
           >
             Submit
