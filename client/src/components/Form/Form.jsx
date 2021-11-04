@@ -21,6 +21,7 @@ const Form = () => {
           {inputFieldValues.map((inputFieldValue, index) => (
             <TextField
               className={classes.fileInput}
+              id={inputFieldValue.id}
               key={index}
               onBlur={handleInputValue}
               onChange={handleInputValue}
@@ -44,12 +45,12 @@ const Form = () => {
           />
           <Button
             className={classes.buttonSubmit}
+            id="event-submit"
             disabled={!formIsValid()}
             variant="contained"
             color="primary"
             size="large"
             type="submit"
-            data-testid="event-submit"
             fullWidth
           >
             Submit
