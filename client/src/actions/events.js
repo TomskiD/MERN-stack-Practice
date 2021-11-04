@@ -4,9 +4,11 @@ import { CREATE, FETCH_ALL } from '../constants/actionTypes';
 export const getEvents = () => async (dispatch) => {
   try {
     const { data } = await api.fetchEvents();
+    alert('Server is running, register your event.');
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (err) {
     console.log(err.message);
+    alert('Network error: check if the server is running');
   }
 };
 
