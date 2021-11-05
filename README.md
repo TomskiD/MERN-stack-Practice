@@ -5,6 +5,8 @@
 * Express
 * React
 * Node.js
+* Jest
+* Cypress
 
 ### Installation
 
@@ -21,14 +23,22 @@
    PORT = 5000
    DB_CONNECTION = mongodb+srv://test_database:2qG2dAgfjfHowpcN@rest.bpir1.mongodb.net/Rest?retryWrites=true&w=majority
    ```
-4. Run application in `/client` and `/server`
+4. First run application on `/server` then `/client` with command 
    ```sh
    npm run start
    ```
    
-To run test in `/server`
+To run tests in backend `/server`
    ```sh
    npm run test
+   ```
+To run tests in frontend `/client`
+   ```sh
+   npm run test
+   ```
+To run E2E tests `/tests`
+   ```sh
+   npm run cypress:open
    ```
 
 ## Usage
